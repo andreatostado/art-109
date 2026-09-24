@@ -17,6 +17,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.5rem;
     line-height: 1.5rem;
+    color: #e27396;
 }
 
 
@@ -102,7 +103,7 @@ padding:2rem 0;
 }
 
 .about-section {
-    background-color:#b3dee2 ;
+    background-color:#b3dee200 ;
 }
 
 .portfolio-section {
