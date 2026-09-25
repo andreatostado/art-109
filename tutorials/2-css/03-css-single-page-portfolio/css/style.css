@@ -1,3 +1,16 @@
+/* color pallet */
+
+:root {
+--background-color-1: #ecf2d8;
+--background-color-2: #ecf2d8;
+--font: #e27396;
+--accent-1: #e27396;
+--accent-2:#8cc4df;}
+
+
+
+
+
 /* CSS resets */
 
 *{
@@ -11,30 +24,55 @@ html{
 }
 
 
+
+
 /* general CSS */
-body {
-    background: #ecf2d8;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    color: #e27396;
+
+html {
+    scroll-behavior: smooth;
 }
 
 
+
+
+body {
+    background:var(--background-color-1);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: #e27396;
+    text-align: justify;
+}
+
+@media (max-width: 700px) {
+    body{
+        font-size: 1rem;
+    }
+}
 
 header{
     padding: 3rem;
     margin-bottom: 3rem;
     background-color: #efcfe3;
+
     text-align: center;
     border-bottom: #eb9ab2 2rem solid;
     color:#e27396
 
+
 }
+@media (max-width: 700px) {
+    header {padding-left: 2rem;
+    }
+}
+
+
 
 
 header h1{
     font-size: 3rem;
+    text-decoration-color: #f086a8;
+    font-family: "Crafty Girls", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 nav {
@@ -42,14 +80,41 @@ nav {
     right:2rem;
     top:  1rem;
     background-color: #efcfe3;
+
+}
+
+nav a:hover {
+   background-color: var(--background-color-1);
+
 }
 
 nav a {
     text-decoration: underline;
     text-decoration-style:double;
     color:#e27396;
+    transition: background-color .5s ease;
+    transform: scale(1.3) ;
 
 }
+
+main{
+    margin: 0;
+}
+
+@media (max-width:1000px) {
+
+     main{
+    margin: 2rem;
+ }
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 1rem;
+    }
+}
+    
+
 
 .about-section,
 .portfolio-section, 
@@ -82,6 +147,7 @@ padding:2rem 0;
     border-radius: .5rem;
     box-shadow: 10px 10px 10px #8cc4df;
     border: 2px #db9db0 solid;
+    
 }
 
 
@@ -102,8 +168,25 @@ padding:2rem 0;
     font-size: 1.2rem;
 }
 
+@media (max-width: 800px) {
+    .portfolio-item{
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-item{
+        padding: 2rem;
+    }
+}
+
+
+
+
+
 .about-section {
     background-color:#b3dee200 ;
+    
 }
 
 .portfolio-section {
@@ -119,4 +202,17 @@ footer {
 }
 footer p {
     font-size: 1rem;
+}
+
+
+/* style classes */
+
+.accentone{
+    color: #f7b8cc;
+}
+
+.crafty-girls-regular {
+  font-family: "Crafty Girls", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
