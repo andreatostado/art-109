@@ -1,0 +1,113 @@
+body {
+    animation: change-color 6s infinite alternate;
+}
+
+
+@keyframes change-color {
+
+    0% {
+        background-color: rgb(238, 145, 233);
+    }
+
+    50% {
+        background-color: rgb(141, 197, 235);
+    }
+
+    100% {
+        background-color: rgb(247, 248, 188);
+    }
+}
+
+
+.title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 80px auto;
+    animation: skew 3s infinite alternate;
+}
+
+@keyframes skew {
+0% {transform: skew(0deg, 0deg);}
+100% {transform: skew(30deg, 20deg);}
+}
+
+.square {
+    background-color: rgb(248, 178, 236);
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 50px auto;
+    transition: all 1s;
+
+}
+
+.square:hover {
+    background-color: rgb(175, 83, 152);
+    transform: rotate(30deg);
+}
+
+.circle:hover {
+    background-color: rgb(33, 90, 155);
+    transform: rotate(30deg);}
+.circle {
+    background-color: rgb(21, 166, 192);
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin: 50px auto;
+    transition: all 1s;
+   transform: scale(2, 0.5);
+   animation: transform 3s infinite alternate;
+}
+
+.shape:hover {
+    background-color: rgb(33, 90, 155);
+    transform: rotate(30deg);}
+
+.shape { transform: rotate(0.5turn);
+    background-color: rgb(250, 234, 90);
+    width: 200px;
+    height: 200px;
+    border-radius: 80px;
+    margin: 50px auto;
+     transition: all 1s;
+    transform: matrix(1, 2, 3, 4, 5, 6);
+   animation: transform 3s infinite alternate;
+}
+
+
+
+.button-div {
+    text-align: center;
+}
+
+.button {
+    background-color: rgb(240, 218, 157);
+    color: rgb(83, 56, 5);
+    padding: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .5s;
+
+}
+
+.button:hover {
+    background-color: rgb(255, 251, 202);
+    color: black;
+    transform: scale(1.5)
+}
+
+
+.loading{
+animation:stretch 5s 3 normal;
+background-color:rgb(109, 51, 94);
+width: 80vw;
+
+}
+
+@keyframes stretch {
+
+0% {width: 100px;}
+100%{width:80vw;}
+}

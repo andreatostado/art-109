@@ -1,0 +1,43 @@
+
+
+
+
+.title {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.square {
+    background-color: rgb(248, 178, 236);
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 50px auto;
+    transition: all 1s;
+
+}
+
+.square:hover {
+    background-color: rgb(175, 83, 152);
+    transform: rotate(30deg);
+}
+
+.button-div{
+    text-align: center;
+}
+
+.button {
+    background-color: rgb(240, 218, 157);
+    color: rgb(83, 56, 5);
+    padding: 15px;
+   border-radius: 10px;
+   text-decoration: none;
+   display: inline-block;
+   transition:all .5s;
+
+}
+
+.button:hover {
+    background-color: rgb(255, 251, 202);
+    color: black;
+    transform: scale(1.5)
+}
