@@ -5,11 +5,16 @@
     --background-color-2: #cdb4db;
     --font: #f186af;
     --accent-1: #bde0fe;
-    --accent-2: #8795e8;
+    --accent-2: #8b5ea5;
 }
 
 
 
+.crafty-girls-regular {
+  font-family: "Crafty Girls", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
 /* CSS resets */
@@ -30,6 +35,7 @@
 /* respect user font size prefrences */
 html {
     font-size: 100%;
+     font-family: "Crafty Girls", cursive;
 }
 
 img {
@@ -53,7 +59,7 @@ body {
     color: var(--font);
     font-size: 1.5rem;
     line-height: 3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:  "Crafty Girls", cursive;
     text-align: justify;
 }
 
