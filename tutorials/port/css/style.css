@@ -2,10 +2,10 @@
 
 :root {
     --background-color-1: #ffe9f3;
-    --background-color-2: #cdd1de;
-    --font: #313d5a;
-    --accent-1: #5fb0b7;
-    --accent-2: #73628a;
+    --background-color-2: #cdb4db;
+    --font: #f186af;
+    --accent-1: #bde0fe;
+    --accent-2: #8795e8;
 }
 
 
@@ -84,7 +84,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--accent-2);
+    background-color: var(--accent-1);
     padding: 3 rem;
 }
 
@@ -186,6 +186,7 @@ main {
 
 .portfolio-item p {
     font-size: 1rem;
+    margin:0.5 rem;
 
 }
 
