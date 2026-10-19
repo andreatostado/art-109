@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/baguetteBox.css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+
+
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Andrea Tostado</h1>
+            </div>
+            <div class="nav">
+                <button class="hamburger">☰</button>
+                <ul class="nav-menu">
+                    <li><a href="#portfolio-section">work</a></li>
+                    <li><a href="#contact-section">contact</a></li>
+                    <li><a href="#about-section">About</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+
+    </header>
+    <main>
+        <section class="about-section" id="about-section">
+            <div class="about-content">
+                <h2><span class="accentone">⋆</span>About me</h2>
+                <p> I like making art because I love looking at art. I love getting to create things which are deeply pleasing to my own eye. Most of my work is created to be consumed by me and me only. 
+
+</p>
+            </div>
+        </section>
+        <section class="portfolio-section" id="portfolio-section">
+            <div class="portfolio-content">
+                <h2>My work</h2>
+                <div class="flex-container-grid">
+
+
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/sit.png" data-caption="confectionery lass">
+                        <img src="images/sit.png" alt="a girl sat on a macaroon with other treats in the background"></a>
+                        <h3>confectionery lass</h3>
+                        <p>super styleized self portait with all my favorite desserts. i love how desserts look in art and that was the main inspo</p>
+                    </div>
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/sat.png" data-caption="waterfront castle">
+                        <img src="images/sat.png" alt="a girl making a sandcastle at the beach"></a>
+                        <h3>waterfront castle</h3>
+                        <p>i love going to the beach so much and even though i've never built a sandcastle, i think the very idea of them is very novel.</p>
+                    </div>
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/road.png" data-caption="roadside attraction">
+                        <img src="images/road.png"
+                            alt="a photograph of a freeway with a girl doodled on it with sea creatures in the background"></a>
+                        <h3>roadside attraction</h3>
+                        <p>i like looking out the window on roadtrips, it's very inspiring. i also really like aquatic animals but i never get to see them so i'd like to imagine them in the sky since it's blue and vast like they ocean.</p>
+                    </div>
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/beach.png" data-caption="tanning by the coast">
+                        <img src="images/beach.png"
+                            alt="a girl lying in the sand at the beach with a in and out milkshake"></a>
+                        <h3>tanning by the coast</h3>
+                        <p>self portrait of me at the beach. this was after i went out on my own for the first time without my parents. i fell down a small cliff that day.</p>
+
+                    </div>
+
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/grey.png"  data-caption="Mr.Detective">
+                        <img src="images/grey.png" alt="grey man with foggy background"></a>
+                        <h3>Mr.Detective</h3>
+                        <p>I made this for artfight 2026. i usually don't draw men, i think women are just nicer to look at. i made an exception this time.</p>
+                    </div>
+                    <div class="portfolio-item flex-item-grid">
+                        <a href="images/pink.png" data-caption="roseate">
+                        <img src="images/pink.png" alt="pink girl in a delapidated room"></a>
+                        <h3>roseate</h3>
+                        <p>This is another self portrait but of my old persona. i'll be honest i don't know why i picked this expression or background...</p>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="contact-section" id="contact-section">
+            <div class="contact-content">
+                <h2>contact me</h2>
+                <p>Email:andrea.tostado@sjsu.edu</p>
+            </div>
+        </section>
+    </main>
+    <footer class="flex-container">
+        <p>&copy;2025 Andrea Tostado</p>
+        <div class="social-links">
+            <a href="#"><img src="images/icon-logo-instagram.png" alt=""></a>
+            <a href="#"><img src="images/icon-logo-facebook.png" alt=""></a>
+            <a href="#"><img src="images/icon-logo-youtube.png" alt=""></a>
+        </div>
+    </footer>
+    <script src="js/sketch.js"></script>
+    <script src="js/hamburger.js"></script>
+    <script src="js/baguetteBox.js"></script>
+    <script>
+        baguetteBox.run(".flex-container-grid",{
+            captions: true
+        })
+    </script>
+</body>
+
+</html>
