@@ -1,0 +1,15 @@
+.parent-container {
+  position: relative; /* Acts as the anchor/boundary */
+}
+
+
+
+
+
+
+
+.seal-dance {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
