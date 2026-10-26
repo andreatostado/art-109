@@ -8,19 +8,21 @@
 
 .baby-seal-div {
     margin: 50px auto;
+    margin-left: 800px;
     position: absolute;
     max-width: 1050px;
-    font-size: 50px;
+    font-size: 30px;
     z-index: index 2;
 }
 
 .cake {
     position: absolute;
-    top: 700px;
+    top: 900px;
     left:550px;
-    bottom:100px;
+    bottom:400px;
 
 }
+
 
 /*.seal-block {
     position: absolute;

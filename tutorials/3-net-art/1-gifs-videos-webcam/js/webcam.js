@@ -21,3 +21,4 @@ console.error("Error accessing webcam:", error);
 }
 
 startWebcam();
+
