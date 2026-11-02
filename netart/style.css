@@ -1,0 +1,117 @@
+body {
+    /* Set the background image */
+    background-image: url('crosswalk.jpg'); 
+
+ 
+    background-repeat: no-repeat;
+
+    background-position: center center;
+
+
+    background-size: cover;
+
+  
+    background-attachment: fixed;
+
+    min-height: 100vh;
+  
+    margin: 0;
+}
+
+body {
+    background-image: url('crosswalk.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* PNG images on top of background */
+
+.object {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    z-index: 2;
+}
+
+/* Individual image positions */
+
+.object1 {
+    top: 870px;
+    left: 100px;
+}
+
+.object2 {
+    top: 850px;
+    left: 1700px;
+}
+
+.object3 {
+    top: 1000px;
+    left: 600px;
+}
+
+.object4 {
+    top: 1120px;
+    left: 130px;
+}
+.object5 {
+    top: 1000px;
+    left: 800px;
+}
+.object6 {
+    top: 900px;
+    left: 1400px;
+}
+
+.object7 {
+    top: 780px;
+    left: 1100px;
+}
+
+.object8 {
+    top: 200px;
+    left: 1000px;
+}
+
+.object9 {
+    top: 850px;
+    left: 800px;
+}
+
+.object10 {
+    top: 780px;
+    left: 400px;
+}
+
+.object11 {
+    top: 1120px;
+    left: 1600px;
+}
+.object12 {
+    top: 200px;
+    left: 500px;
+}
+.object13 {
+    top: 800px;
+    left: 1900px;
+}
+
+
+
+
+
+.poster {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.object {
+    position: absolute;
+    width: 150px;
+    height: auto;
+}
