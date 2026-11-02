@@ -1,45 +1,29 @@
-const poster = document.querySelector(".poster");
-const cursor = document.getElementById("custom-cursor");
 
-const popup = document.getElementById("popup");
-const popupTitle = document.getElementById("popup-title");
-const popupDescription = document.getElementById("popup-description");
+const cursor = document.getElementById("custom-cursor");
 
 const objects = document.querySelectorAll(".object");
 
-// Make cursor follow mouse
-poster.addEventListener("mousemove", function(event) {
-  const rect = poster.getBoundingClientRect();
+// Move cursor with mouse
+document.addEventListener("mousemove", function(e) {
 
-  cursor.style.left = (event.clientX - rect.left) + "px";
-  cursor.style.top = (event.clientY - rect.top) + "px";
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+
 });
 
-poster.addEventListener("mouseenter", function() {
-  cursor.style.display = "flex";
-});
-
-poster.addEventListener("mouseleave", function() {
-  cursor.style.display = "none";
-  popup.style.display = "none";
-});
-
-// Detect PNG hover
+// Change cursor text when hovering over PNGs
 objects.forEach(function(object) {
 
-  object.addEventListener("mouseenter", function() {
+    object.addEventListener("mouseenter", function() {
 
-    cursor.textContent = object.dataset.label;
+        cursor.textContent = object.dataset.label;
 
-    popupTitle.textContent = object.dataset.label;
-    popupDescription.textContent = object.dataset.description;
+    });
 
-    popup.style.display = "block";
-  });
+    object.addEventListener("mouseleave", function() {
 
-  object.addEventListener("mouseleave", function() {
-    cursor.textContent = "EXPLORE";
-    popup.style.display = "none";
-  });
+        cursor.textContent = "EXPLORE";
+
+    });
 
 });
