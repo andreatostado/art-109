@@ -17,6 +17,33 @@ body {
     z-index: 0;
 }
 
+
+
+.poster {
+  position: relative;
+  width: 100%;
+  max-width: 1850px;
+  margin: 0 auto;
+}
+
+.background {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.object {
+  position: absolute;
+  width: 8.11%;
+  height: auto;
+  z-index: 2;
+}
+
+
+
+
+
+
 /* PNG objects */
 .object {
     position: absolute;
@@ -26,70 +53,77 @@ body {
     cursor: none;
 }
 
-/* Individual image positions */
+.object {
+  position: absolute;
+  width: 8.11%;
+  height: auto;
+  z-index: 2;
+}
+
+/* Figure positions */
 .object1 {
-    top: 870px;
-    left: 100px;
+  top: 61.31%;
+  left: 5.41%;
 }
 
 .object2 {
-    top: 850px;
-    left: 1700px;
+  top: 59.90%;
+  left: 91.89%;
 }
 
 .object3 {
-    top: 1000px;
-    left: 600px;
+  top: 70.47%;
+  left: 32.43%;
 }
 
 .object4 {
-    top: 1120px;
-    left: 130px;
+  top: 70%;
+  left: 7%;
 }
 
 .object5 {
-    top: 1000px;
-    left: 800px;
+  top: 70.47%;
+  left: 43.24%;
 }
 
 .object6 {
-    top: 900px;
-    left: 1400px;
+  top: 63.42%;
+  left: 75.68%;
 }
 
 .object7 {
-    top: 780px;
-    left: 1100px;
+  top: 54.97%;
+  left: 59.46%;
 }
 
 .object8 {
-    top: 200px;
-    left: 1000px;
+  top: 14.09%;
+  left: 54.05%;
 }
 
 .object9 {
-    top: 850px;
-    left: 800px;
+  top: 50%;
+  left: 43.24%;
 }
 
 .object10 {
-    top: 780px;
-    left: 400px;
+  top: 54.97%;
+  left: 21.62%;
 }
 
 .object11 {
-    top: 1120px;
-    left: 1600px;
+  top: 75%;
+  left: 88%;
 }
 
 .object12 {
-    top: 200px;
-    left: 500px;
+  top: 14.09%;
+  left: 27.03%;
 }
 
 .object13 {
-    top: 800px;
-    left: 1900px;
+  top: 56.38%;
+  left: 80%;
 }
 
 
@@ -122,3 +156,70 @@ body {
     transform: translate(-50%, -50%);
 }
 
+
+
+/* Pop-up background */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pop-up box */
+.popup-content {
+  background: white;
+  color: black;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Input box */
+.popup-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid black;
+}
+
+/* Buttons */
+.popup-content button {
+  padding: 8px 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+
+
+#custom-cursor.changed {
+  border-color: red;
+  color: red;
+}
+
+
+.instructions {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  z-index: 9999;
+
+  color: red;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  background: none;
+  padding: 0;
+
+  pointer-events: none;
+}
