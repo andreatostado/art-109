@@ -6,12 +6,101 @@ const input = document.getElementById("label-input");
 const submitButton = document.getElementById("submit-label");
 const closeButton = document.getElementById("close-popup");
 
+// Progress bar
+const progressFill = document.getElementById("progress-fill");
+const progressPercent = document.getElementById("progress-percent");
+
+// Success popup
+const successPopup = document.getElementById("success-popup");
+const successClose = document.getElementById("success-close");
+
 let selectedObject = null;
 let hoveredObject = null;
 
 let dots = 1;
 let animation = null;
 let stopTimer = null;
+
+let celebrationShown = false;
+
+
+// UPDATE PROGRESS BAR
+function updateProgress() {
+
+    const renamedCount = document.querySelectorAll(
+        '.object[data-changed="true"]'
+    ).length;
+
+    const percentage = Math.round(
+        (renamedCount / objects.length) * 100
+    );
+
+    progressFill.style.width = percentage + "%";
+    progressPercent.textContent = percentage + "%";
+
+    // Show celebration when all objects are renamed
+    if (percentage === 100 && !celebrationShown) {
+        celebrationShown = true;
+        showCelebration();
+    }
+}
+
+
+// SHOW CELEBRATION
+function showCelebration() {
+
+    successPopup.classList.add("show");
+
+    // Create confetti shapes
+    const colors = [
+        "red", "orange", "gold",
+        "hotpink", "blue", "limegreen",
+        "purple"
+    ];
+
+    for (let i = 0; i < 80; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        // Random position
+        confetti.style.left = Math.random() * 100 + "vw";
+
+        // Random color
+        confetti.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        // Random size
+        confetti.style.width = (Math.random() * 10 + 5) + "px";
+        confetti.style.height = (Math.random() * 12 + 5) + "px";
+
+        // Random shape
+        if (Math.random() > 0.5) {
+            confetti.style.borderRadius = "50%";
+        }
+
+        // Random falling speed and delay
+        confetti.style.animationDuration =
+            (Math.random() * 2 + 2) + "s";
+
+        confetti.style.animationDelay =
+            (Math.random() * 1.5) + "s";
+
+        successPopup.appendChild(confetti);
+
+        // Remove confetti after animation
+        setTimeout(function() {
+            confetti.remove();
+        }, 5000);
+    }
+}
+
+
+// Close success popup
+successClose.addEventListener("click", function() {
+    successPopup.classList.remove("show");
+});
 
 
 // Animate exploring dots
@@ -42,7 +131,7 @@ function stopExploring() {
     clearInterval(animation);
     animation = null;
 
-    cursor.textContent = "EXPLORE";
+    cursor.textContent = "EXPLORING";
 }
 
 
@@ -52,18 +141,14 @@ document.addEventListener("mousemove", function(e) {
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
 
-    // Don't animate while hovering over an object
     if (hoveredObject) return;
 
-    // Start the dots animation
     if (!animation) {
         startExploring();
     }
 
-    // Reset timer whenever the mouse moves
     clearTimeout(stopTimer);
 
-    // If mouse stays still for 1 second, remove the dots
     stopTimer = setTimeout(function() {
         stopExploring();
     }, 1000);
@@ -74,7 +159,6 @@ document.addEventListener("mousemove", function(e) {
 // Hover and click images
 objects.forEach(function(object) {
 
-    // When mouse enters an object
     object.addEventListener("mouseenter", function() {
 
         hoveredObject = object;
@@ -84,10 +168,8 @@ objects.forEach(function(object) {
 
         clearTimeout(stopTimer);
 
-        // Show object's label
         cursor.textContent = object.dataset.label || "EXPLORE";
 
-        // Turn cursor red if label was changed
         if (object.dataset.changed === "true") {
             cursor.classList.add("changed");
         } else {
@@ -97,14 +179,12 @@ objects.forEach(function(object) {
     });
 
 
-    // When mouse leaves an object
     object.addEventListener("mouseleave", function() {
 
         hoveredObject = null;
 
         cursor.classList.remove("changed");
 
-        // Restart exploring animation
         startExploring();
 
         clearTimeout(stopTimer);
@@ -116,7 +196,7 @@ objects.forEach(function(object) {
     });
 
 
-    // Click object to open pop-up
+    // Click object to open popup
     object.addEventListener("click", function() {
 
         selectedObject = object;
@@ -132,7 +212,7 @@ objects.forEach(function(object) {
 });
 
 
-// Submit a new label
+// Submit new label
 submitButton.addEventListener("click", function() {
 
     if (selectedObject && input.value.trim() !== "") {
@@ -140,6 +220,8 @@ submitButton.addEventListener("click", function() {
         selectedObject.dataset.label = input.value.trim();
 
         selectedObject.dataset.changed = "true";
+
+        updateProgress();
 
         popup.style.display = "none";
 
@@ -152,7 +234,7 @@ submitButton.addEventListener("click", function() {
 });
 
 
-// Close pop-up
+// Close label popup
 function closePopup() {
 
     popup.style.display = "none";
@@ -164,7 +246,7 @@ function closePopup() {
 closeButton.addEventListener("click", closePopup);
 
 
-// Close pop-up when clicking outside the box
+// Close label popup by clicking outside
 popup.addEventListener("click", function(e) {
 
     if (e.target === popup) {
@@ -172,3 +254,7 @@ popup.addEventListener("click", function(e) {
     }
 
 });
+
+
+// Initialize progress
+updateProgress();

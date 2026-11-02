@@ -33,7 +33,16 @@
     <img src="media/vampire.png" class="object object13" data-label="OBJECT 13">
 
 
+<!-- Progress bar -->
+<div class="progress-container">
+    <div class="progress-label">
+        ORGANISMS IDENTIFIED: <span id="progress-percent">0%</span>
+    </div>
 
+    <div class="progress-track">
+        <div id="progress-fill"></div>
+    </div>
+</div>
 <div class="instructions">
   CLICK TO IDENTIFY ORGANISMS
 </div>
@@ -53,10 +62,18 @@
   </div>
 </div>
 
+<!-- Success celebration popup -->
+<div id="success-popup" class="success-popup">
+    <div class="success-content">
+        <h2>DATA LOGGED SUCCESSFULLY!</h2>
+        <p>All organisms have been identified.</p>
+        <button id="success-close">Finish</button>
+    </div>
+</div>
+
 <script src="style.js"></script>
 
 
-    <script src="style.js"></script>
 
 </body>
 </html>
