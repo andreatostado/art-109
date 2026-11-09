@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff8fc">
+    <meta name="description" content="A cozy little corner of the internet for sharing everyday magic.">
+    <title>puff — your happy little feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="common-words.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="left-sidebar" aria-label="Main navigation">
+            <a class="brand" href="index.html" aria-label="puff home">
+                <span class="brand-mark" aria-hidden="true">🦭</span>
+                <span>puff<span class="brand-dot">.</span></span>
+            </a>
+
+            <nav class="main-nav">
+                <a class="nav-link active" href="#feed"><span class="nav-icon" aria-hidden="true">⌂</span> Home</a>
+                <a class="nav-link" href="view.html?view=discover"><span class="nav-icon" aria-hidden="true">⌕</span> Discover</a>
+                <a class="nav-link" href="view.html?view=messages"><span class="nav-icon" aria-hidden="true">♡</span> Messages <span class="nav-badge">2</span></a>
+                <a class="nav-link" href="view.html?view=saved"><span class="nav-icon" aria-hidden="true">☆</span> Saved</a>
+            </nav>
+
+            <button class="compose-button" type="button" data-focus-composer>＋ <span>Make a post</span></button>
+
+            <div class="sidebar-bottom">
+                <a class="profile-link" href="view.html?view=profile">
+                    <span class="avatar avatar-self"><img src="images/seal-heart.jpg" alt=""></span>
+                    <span><strong>mimi bloom</strong><small>@mimibloom</small></span>
+                    <span class="more-dots" aria-hidden="true">•••</span>
+                </a>
+                <p class="tiny-note">made with <span aria-label="love">♡</span> and a little sparkle</p>
+            </div>
+        </aside>
+
+        <main class="feed-column" id="feed">
+            <header class="mobile-header">
+                <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">🦭</span><span>puff<span class="brand-dot">.</span></span></a>
+                <a class="icon-button" href="view.html?view=messages" aria-label="Open messages">♡<span class="notification-dot"></span></a>
+            </header>
+
+            <div class="feed-heading">
+                <div>
+                    <p class="eyebrow">a cozy cove for your seal pals</p>
+                    <h1>Welcome to the seal shore <span aria-hidden="true">🫧</span></h1>
+                </div>
+                <a class="icon-button search-button" href="view.html?view=discover" aria-label="Search">⌕</a>
+            </div>
+
+            <section class="stories-panel" aria-label="Stories">
+                <div class="section-label"><h2>little moments</h2><a href="view.html?view=discover">See all <span aria-hidden="true">→</span></a></div>
+                <div class="stories-row" id="stories">
+                    <button class="story story-add" type="button" aria-label="Add your story" data-add-story>
+                        <span class="story-ring"><span class="story-avatar add-avatar">＋</span></span>
+                        <span class="story-name">Your story</span>
+                    </button>
+                    <button class="story" type="button" aria-label="View Hana's story" data-story-name="hana" data-story-text="snoozy fluffball ✨">
+                        <span class="story-ring ring-peach"><span class="story-avatar"><img src="images/seal-stars.jpg" alt=""></span></span>
+                        <span class="story-name">hana</span>
+                    </button>
+                    <button class="story" type="button" aria-label="View Coco's story" data-story-name="coco" data-story-text="plip-plop daydreams 🫧">
+                        <span class="story-ring ring-lilac"><span class="story-avatar"><img src="images/seal-teacup.jpg" alt=""></span></span>
+                        <span class="story-name">coco</span>
+                    </button>
+                    <button class="story" type="button" aria-label="View Yuki's story" data-story-name="yuki" data-story-text="bloopberry bliss ✨">
+                        <span class="story-ring ring-mint"><span class="story-avatar"><img src="images/seal-blue.jpg" alt=""></span></span>
+                        <span class="story-name">yuki</span>
+                    </button>
+                    <button class="story" type="button" aria-label="View Poppy's story" data-story-name="poppy" data-story-text="snufflebean sparkle 🌷">
+                        <span class="story-ring ring-blue"><span class="story-avatar"><img src="images/seal-ballon.jpg" alt=""></span></span>
+                        <span class="story-name">poppy</span>
+                    </button>
+                    <button class="story" type="button" aria-label="View Ren's story" data-story-name="ren" data-story-text="fluffball snoozy 🫧">
+                        <span class="story-ring ring-pink"><span class="story-avatar"><img src="images/seal-watermelon.jpg" alt=""></span></span>
+                        <span class="story-name">ren</span>
+                    </button>
+                    <button class="story story-extra" type="button" aria-label="View Momo's story" data-story-name="momo" data-story-text="bloopberry bliss ✨">
+                        <span class="story-ring ring-yellow"><span class="story-avatar"><img src="images/seal-cupcake.jpg" alt=""></span></span>
+                        <span class="story-name">momo</span>
+                    </button>
+                </div>
+            </section>
+
+            <form class="composer card" id="composer">
+                <span class="avatar avatar-self"><img src="images/seal-heart.jpg" alt=""></span>
+                <label class="sr-only" for="post-message">Share a little something</label>
+                <input id="post-message" name="message" type="text" maxlength="180" placeholder="Share a little something...">
+                <label class="upload-button" for="post-image" aria-label="Add a photo" title="Add a photo">▧<input class="sr-only" id="post-image" type="file" accept="image/*"></label>
+                <button class="composer-submit" type="submit">Post <span aria-hidden="true">✿</span></button>
+            </form>
+            <div class="upload-preview" id="post-preview" hidden></div>
+            <p class="form-message" id="post-message-status" role="status" aria-live="polite"></p>
+
+            <div class="feed-controls">
+                <h2>the latest <span aria-hidden="true">♡</span></h2>
+                <button class="sort-button" type="button" data-sort-posts>For you <span aria-hidden="true">⌄</span></button>
+            </div>
+
+            <section class="posts" aria-label="Latest seal snapshots">
+                <article class="post-card card" id="seed-flower" data-post-id="seed-flower">
+                    <div class="post-header">
+                        <span class="avatar avatar-hana"><img src="images/seal-stars.jpg" alt=""></span>
+                        <div class="post-author"><strong>hana’s happy place</strong><span>@hanabear · 12 min ago</span></div>
+                        <button class="more-button" type="button" aria-label="More options">•••</button>
+                    </div>
+                    <p class="post-copy">snoozy fluffball ✨</p>
+                    <figure class="post-media media-flower">
+                        <div class="photo-fallback" aria-hidden="true"><span>🦭 🫧 🦭</span><small>pinky seal snooze</small></div>
+                        <img src="images/seal-blush.jpg" alt="A rosy baby seal with pink hearts and stars">
+                        <span class="image-sticker" aria-hidden="true">♡</span>
+                    </figure>
+                    <div class="post-actions">
+                        <button class="action-button like-button" type="button" aria-label="Like post" aria-pressed="false"><span aria-hidden="true">♡</span><span class="like-count">128</span></button>
+                        <button class="action-button comment-button" type="button" aria-label="Comment"><span aria-hidden="true">☏</span><span>12</span></button>
+                        <button class="action-button share-button" type="button" aria-label="Share"><span aria-hidden="true">↗</span></button>
+                        <button class="action-button save-button" type="button" aria-label="Save post" aria-pressed="false"><span aria-hidden="true">☆</span></button>
+                    </div>
+                    <p class="liked-by">adored by <strong>coco</strong> and <strong>127 pals</strong></p>
+                </article>
+
+                <article class="post-card card" id="seed-matcha" data-post-id="seed-matcha">
+                    <div class="post-header">
+                        <span class="avatar avatar-coco"><img src="images/seal-teacup.jpg" alt=""></span>
+                        <div class="post-author"><strong>coco’s cozy corner</strong><span>@cocobunni · 38 min ago</span></div>
+                        <button class="more-button" type="button" aria-label="More options">•••</button>
+                    </div>
+                    <p class="post-copy">plip-plop daydreams 🫧</p>
+                    <figure class="post-media media-dumpling">
+                        <div class="photo-fallback" aria-hidden="true"><span>🥟 🦭 🥟</span><small>seal-shaped dumplings</small></div>
+                        <img src="images/seal-dumpling.jpg" alt="Two dumplings decorated like little seals">
+                        <span class="image-sticker sticker-sparkle" aria-hidden="true">✧</span>
+                    </figure>
+                    <div class="post-actions">
+                        <button class="action-button like-button" type="button" aria-label="Like post" aria-pressed="false"><span aria-hidden="true">♡</span><span class="like-count">86</span></button>
+                        <button class="action-button comment-button" type="button" aria-label="Comment"><span aria-hidden="true">☏</span><span>8</span></button>
+                        <button class="action-button share-button" type="button" aria-label="Share"><span aria-hidden="true">↗</span></button>
+                        <button class="action-button save-button" type="button" aria-label="Save post" aria-pressed="false"><span aria-hidden="true">☆</span></button>
+                    </div>
+                    <p class="liked-by">adored by <strong>yuki</strong> and <strong>85 pals</strong></p>
+                </article>
+                <article class="post-card card" id="seed-cupcake" data-post-id="seed-cupcake">
+                    <div class="post-header">
+                        <span class="avatar avatar-poppy"><img src="images/seal-ballon.jpg" alt=""></span>
+                        <div class="post-author"><strong>poppy daydreams</strong><span>@poppyday · 1 hr ago</span></div>
+                        <button class="more-button" type="button" aria-label="More options">•••</button>
+                    </div>
+                    <p class="post-copy">bloopberry bliss ✨</p>
+                    <figure class="post-media">
+                        <div class="photo-fallback" aria-hidden="true"><span>🧁 🦭 🧁</span><small>cupcake seal pal</small></div>
+                        <img src="images/seal-cupcake.jpg" alt="A tiny seal nestled in a pink cupcake">
+                        <span class="image-sticker" aria-hidden="true">♡</span>
+                    </figure>
+                    <div class="post-actions">
+                        <button class="action-button like-button" type="button" aria-label="Like post" aria-pressed="false"><span aria-hidden="true">♡</span><span class="like-count">54</span></button>
+                        <button class="action-button comment-button" type="button" aria-label="Comment"><span aria-hidden="true">☏</span><span>6</span></button>
+                        <button class="action-button share-button" type="button" aria-label="Share"><span aria-hidden="true">↗</span></button>
+                        <button class="action-button save-button" type="button" aria-label="Save post" aria-pressed="false"><span aria-hidden="true">☆</span></button>
+                    </div>
+                </article>
+                <article class="post-card card" id="seed-watermelon" data-post-id="seed-watermelon">
+                    <div class="post-header">
+                        <span class="avatar avatar-ren"><img src="images/seal-watermelon.jpg" alt=""></span>
+                        <div class="post-author"><strong>ren’s scrapbook</strong><span>@berryren · 2 hr ago</span></div>
+                        <button class="more-button" type="button" aria-label="More options">•••</button>
+                    </div>
+                    <p class="post-copy">snufflebean sparkle 🌷</p>
+                    <figure class="post-media">
+                        <div class="photo-fallback" aria-hidden="true"><span>🍉 🦭 🍉</span><small>watermelon seal day</small></div>
+                        <img src="images/seal-watermelon.jpg" alt="A pixel-art seal nibbling a watermelon slice">
+                        <span class="image-sticker" aria-hidden="true">✧</span>
+                    </figure>
+                    <div class="post-actions">
+                        <button class="action-button like-button" type="button" aria-label="Like post" aria-pressed="false"><span aria-hidden="true">♡</span><span class="like-count">41</span></button>
+                        <button class="action-button comment-button" type="button" aria-label="Comment"><span aria-hidden="true">☏</span><span>4</span></button>
+                        <button class="action-button share-button" type="button" aria-label="Share"><span aria-hidden="true">↗</span></button>
+                        <button class="action-button save-button" type="button" aria-label="Save post" aria-pressed="false"><span aria-hidden="true">☆</span></button>
+                    </div>
+                </article>
+            </section>
+            <p class="end-note">cove patrol says you’re all caught up <span aria-hidden="true">🦭</span></p>
+        </main>
+
+        <aside class="right-sidebar" aria-label="Community">
+            <div class="right-top"><button class="premium-button" type="button" data-premium>✧ <span>treat yourself</span></button></div>
+            <section class="weather-card">
+                <div class="weather-copy"><span class="eyebrow">your cove forecast</span><strong>Gentle sea mist</strong><span>ideal for a cozy float!</span></div>
+                <span class="weather-icon" aria-hidden="true">🦭</span>
+            </section>
+            <section class="suggestions">
+                <div class="section-label"><h2>your kind of people</h2><a href="view.html?view=discover">See all <span aria-hidden="true">→</span></a></div>
+                <article class="suggestion">
+                    <span class="avatar avatar-yuki"><img src="images/seal-blue.jpg" alt=""></span>
+                    <div class="suggestion-copy"><strong>yuki’s tiny world</strong><span>3 mutual friends</span></div>
+                    <button class="follow-button" type="button" aria-pressed="false" data-follow="yuki">Follow</button>
+                </article>
+                <article class="suggestion">
+                    <span class="avatar avatar-poppy"><img src="images/seal-ballon.jpg" alt=""></span>
+                    <div class="suggestion-copy"><strong>poppy daydreams</strong><span>2 mutual friends</span></div>
+                    <button class="follow-button" type="button" aria-pressed="false" data-follow="poppy">Follow</button>
+                </article>
+                <article class="suggestion">
+                    <span class="avatar avatar-ren"><img src="images/seal-watermelon.jpg" alt=""></span>
+                    <div class="suggestion-copy"><strong>ren’s scrapbook</strong><span>4 mutual friends</span></div>
+                    <button class="follow-button" type="button" aria-pressed="false" data-follow="ren">Follow</button>
+                </article>
+            </section>
+            <section class="daily-card">
+                <span aria-hidden="true" class="daily-sparkle">✧</span>
+                <span class="eyebrow">a tiny thought for today</span>
+                <p>“soft flippers, slow ripples, cozy naps.”</p>
+                <span class="daily-credit">— cove club 🦭</span>
+            </section>
+            <footer class="site-footer">
+                <a href="view.html?view=discover">About</a><a href="view.html?view=discover">Community</a><a href="view.html?view=profile">Privacy</a>
+                <span>© 2026 puff social</span>
+            </footer>
+        </aside>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a class="mobile-nav-active" href="#feed" aria-label="Home">⌂</a>
+        <a href="view.html?view=discover" aria-label="Discover">⌕</a>
+        <button type="button" data-focus-composer aria-label="Make a post">＋</button>
+        <a href="view.html?view=messages" aria-label="Messages">♡</a>
+        <a href="view.html?view=profile" aria-label="Profile">🌷</a>
+    </nav>
+    <input class="sr-only" id="story-image" type="file" accept="image/*" aria-label="Choose a story photo">
+    <dialog class="app-dialog" id="app-dialog">
+        <form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close dialog">×</button></form>
+        <div class="dialog-content" id="dialog-content"></div>
+    </dialog>
+</body>
+</html>

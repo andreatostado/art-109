@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff8fc">
+    <title>puff — your happy little corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="common-words.js" defer></script>
+    <script src="view.js" defer></script>
+</head>
+<body>
+    <div class="view-shell">
+        <header class="view-header">
+            <a class="brand" href="index.html" aria-label="puff home"><span class="brand-mark" aria-hidden="true">✿</span><span>puff<span class="brand-dot">.</span></span></a>
+            <a class="back-home" href="index.html">← Back to your feed</a>
+        </header>
+        <nav class="view-nav" aria-label="Main navigation">
+            <a href="index.html">⌂ <span>Home</span></a>
+            <a href="view.html?view=discover">⌕ <span>Discover</span></a>
+            <a href="view.html?view=messages">♡ <span>Messages</span></a>
+            <a href="view.html?view=saved">☆ <span>Saved</span></a>
+            <a href="view.html?view=profile">🌷 <span>My profile</span></a>
+        </nav>
+        <main class="view-content" id="view-content" aria-live="polite"></main>
+        <footer class="view-footer">made with <span>♡</span> and a little sparkle · puff social</footer>
+    </div>
+    <dialog class="app-dialog" id="app-dialog">
+        <form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close dialog">×</button></form>
+        <div class="dialog-content" id="dialog-content"></div>
+    </dialog>
+</body>
+</html>
